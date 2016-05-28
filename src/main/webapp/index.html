@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
         function alumnoController($scope,$http) {
-            $http.get("alumnos").success( function(response) {
+            $http.get("alumnos", {method: "GET", params: {ordenarPor: "promedio"}}).success( function(response) {
                 $scope.alumnos = response;
             });
         }

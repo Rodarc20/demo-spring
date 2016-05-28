@@ -28,7 +28,7 @@ public class Demo2Application {
     public List<Alumno> alumnos(String ordenarPor) {
         List<Alumno> a = repositorio.listar();
 
-        //if(ordenarPor.compareTo("nombre")==0) {
+        if(ordenarPor.compareTo("nombre")==0) {
             int ini = 0;
             int fin = a.size() - 1;
             while (fin > ini) {
@@ -39,7 +39,31 @@ public class Demo2Application {
                 }
                 fin--;
             }
-        //}
+        }
+        if(ordenarPor.compareTo("apellidoP")==0) {
+            int ini = 0;
+            int fin = a.size() - 1;
+            while (fin > ini) {
+                for (int i = 0; i < fin; i++) {
+                    if (a.get(i).apellidoPaterno.compareTo(a.get(i + 1).apellidoPaterno) > 0) { //if(a.get(i).nombres > a.get(i+1).nombres){
+                        a.set(i + 1, a.set(i, a.get(i + 1)));
+                    }
+                }
+                fin--;
+            }
+        }
+        if(ordenarPor.compareTo("promedio")==0) {
+            int ini = 0;
+            int fin = a.size() - 1;
+            while (fin > ini) {
+                for (int i = 0; i < fin; i++) {
+                    if (a.get(i).promedio.compareTo(a.get(i + 1).promedio) > 0) { //if(a.get(i).nombres > a.get(i+1).nombres){
+                        a.set(i + 1, a.set(i, a.get(i + 1)));
+                    }
+                }
+                fin--;
+            }
+        }
         return a;
     }
 }
