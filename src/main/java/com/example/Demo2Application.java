@@ -26,6 +26,19 @@ public class Demo2Application {
     @RequestMapping("/alumnos")
     @ResponseBody
     public List<Alumno> alumnos(String ordenarPor) {
-        return repositorio.listar();
+        List<Alumno> a = repositorio.listar();
+        /* ordenar por ahora solo con nombre, una vez que lo consiga lo ordenare por los otros parametros */
+
+        int ini = 0;
+        int fin = a.size() - 1;
+        while(fin > ini){
+            for (int i = 0; i < fin; i++) {
+                if(a.get(i).nombres.compareTo(a.get(i+1).nombres) > 0){ //if(a.get(i).nombres > a.get(i+1).nombres){
+                    a.set(i+1, a.set(i, a.get(i + 1)));
+                }
+            }
+            fin--;
+        }
+        return a;
     }
 }
