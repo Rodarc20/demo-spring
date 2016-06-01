@@ -1,10 +1,14 @@
 package com.example.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 /**
  * Created by rodrigo on 20/05/16.
  */
-
+@Entity
 public class Alumno {
+    @Id
+    public Integer id;
     public String nombres;
     public String apellidoPaterno;
     public String apellidoMaterno;
