@@ -6,12 +6,26 @@ package com.example.dominio;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Set;
 
 @Entity
 public class Curso {
 	@Id
 	private String codigo;
 	private String nombre;
+    /*
+    //de la clase Matricula
+    @ManyToMany(mappedBy = "cursos")
+    private Set<Matricula> matriculas;
+
+    public Set<Matricula> getMatriculas(){
+        return matriculas;
+    }
+    public void setMatriculas(Set<Matricula> matriculas){
+        this.matriculas = matriculas;
+    }
+    */
 
 	public String getCodigo() {
 		return codigo;
@@ -28,4 +42,5 @@ public class Curso {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 }
