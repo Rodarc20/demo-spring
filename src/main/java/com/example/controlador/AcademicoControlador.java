@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dominio.Alumno;
 import com.example.dominio.Curso;
+import com.example.dominio.Matricula;
 import com.example.repositorio.AlumnoRepositorio;
 import com.example.repositorio.CursoRepositorio;
+import com.example.repositorio.MatriculaRepositorio;
 
 @RestController
 public class AcademicoControlador {

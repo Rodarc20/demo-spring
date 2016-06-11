@@ -16,9 +16,6 @@ public class Matricula {
     @JoinTable(name = "matricula_curso", joinColumns = @JoinColumn(name = "codigo"), inverseJoinColumns = @JoinColumn(name = "id_matricula"))
     private Set<Curso> cursos;//en un solo sentido esta la dependencia // o deberia ponerla en las dos, dejare el codigo comentado
 
-    public Matricula(){
-
-    }
     //deberia tener una funcion que agregue cursos, aun que aun no se como insertar esto
     public Integer getId_matricula(){
         return id_matricula;
