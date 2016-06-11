@@ -9,12 +9,12 @@ import java.util.Set;
 @Entity
 public class Matricula {
     @Id
-    public Integer id_matricula;
-    public Integer id_alumno;
-    public Integer promedio;
+    private Integer id_matricula;
+    private Integer id_alumno;
+    private Integer promedio;
     @ManyToMany
     @JoinTable(name = "matricula_curso", joinColumns = @JoinColumn(name = "codigo"), inverseJoinColumns = @JoinColumn(name = "id_matricula"))
-    public Set<Curso> cursos;//en un solo sentido esta la dependencia // o deberia ponerla en las dos, dejare el codigo comentado
+    private Set<Curso> cursos;//en un solo sentido esta la dependencia // o deberia ponerla en las dos, dejare el codigo comentado
 
     public Matricula(){
 
